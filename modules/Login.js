@@ -2,6 +2,24 @@ class Login {
   constructor() {
 
   }
+  loginButtonAnimate() {
+    
+      let viewportWidth = $(window).width();
+      let viewportHeight = $(window).height();
+      
+      $("#logo-jumbotron").animate({ 
+          position: "absolute",
+          bottom: viewportHeight / 6,
+          width: "50px", //800
+          height: "50px" //400
+      });
+      $(".regForm").animate({
+        left: "-150%"
+      });
+      $(".logForm").animate({
+          left: "45%"
+      });
+  }
   toggleSignIn() {
     if (firebase.auth().currentUser) {
       // [START signout]

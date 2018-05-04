@@ -1,8 +1,11 @@
 $(function(){
     let registerBtn = new Register();
-    $(".registerForm").hide();
+    let loginBtn = new Login();
     
     $(".register").click(() => {
         registerBtn.registerButtonAnimate();
+    });
+    $(".login").click(() => {
+        loginBtn.loginButtonAnimate();
     });
 })
