@@ -42,7 +42,7 @@ hr {
 label {
     color: white;
 }
-.formBtn {
+.logBtn, regBtn {
     margin-top: 1rem;
 }
 .jumbotron {
