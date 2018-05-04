@@ -27,6 +27,7 @@ hr {
 .jumbotron {
     background-image: url("../img/background.jpg");
     background-color: whitesmoke;
+    width: 100%;
     margin-bottom: 10px;
     min-height: 700px;
     background-repeat: no-repeat;
@@ -40,6 +41,7 @@ hr {
 
 #logo-jumbotron {
     width: 150vh;
+    position: relative;
 }
 
 .arrow {
