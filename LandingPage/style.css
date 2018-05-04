@@ -1,7 +1,6 @@
 body {
     background-color: cadetblue;
 }
-
 h1.display-4 {
     position: relative;
     top: 140px;
@@ -24,9 +23,32 @@ hr {
     color: white;
 }
 
+.regForm {
+    width:300px;
+    height:400px;
+    left: -100%;
+    position:fixed;
+    top:50%; margin-top:-50px; /* vertical center */
+    margin-left:-100px; /* horizontal center */  
+}
+.logForm {
+    width:300px;
+    height:400px;
+    right: -100%;
+    position:fixed;
+    top:50%; margin-top:-50px; /* vertical center */
+    margin-left:-100px; /* horizontal center */  
+}
+label {
+    color: white;
+}
+.logBtn, regBtn {
+    margin-top: 1rem;
+}
 .jumbotron {
     background-image: url("../img/background.jpg");
     background-color: whitesmoke;
+    width: 100%;
     margin-bottom: 10px;
     min-height: 700px;
     background-repeat: no-repeat;
@@ -39,7 +61,7 @@ hr {
 }
 
 #logo-jumbotron {
-    width: 150vh;
+    position: relative;
 }
 
 .arrow {
@@ -81,7 +103,7 @@ div.container {
     padding-left: 30px;
 }
 
-.transparent_btn {
+.transparent_btn, .transparent_form {
 	display: inline-block;
 	padding: 10px 14px;
 	color: whitesmoke;
@@ -95,7 +117,6 @@ div.container {
     cursor: pointer;
     font-family: "Questrial", sans-serif;
 }
-
 .transparent_btn:hover {
 	background-color: rgba(255,255,255, 0.3);
     color: whitesmoke;
