@@ -28,7 +28,7 @@ hr {
     height:400px;
     left: -100%;
     position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
+    top:30%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
 .logForm {
@@ -36,13 +36,13 @@ hr {
     height:400px;
     right: -100%;
     position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
+    top:30%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
 label {
     color: white;
 }
-.logBtn, regBtn {
+.logBtn, .regBtn {
     margin-top: 1rem;
 }
 .jumbotron {
@@ -62,6 +62,7 @@ label {
 
 #logo-jumbotron {
     position: relative;
+    margin-top: 10%; 
 }
 
 .arrow {
