@@ -9,8 +9,8 @@ class Register {
         $("#logo-jumbotron").animate({ 
             position: "absolute",
             bottom: viewportHeight / 6,
-            width: "50px", //800
-            height: "50px" //400
+            width: "400",
+            height: "200"
         });
         $(".logForm").animate({
             left: "150%"
@@ -28,13 +28,14 @@ class Register {
           return;
         }
         if (password.length < 4) {
-          alert('Please enter a password loner than 4 characters.');
+          alert('Please enter a password longer than 4 characters.');
           return;
         }
         // Sign in with email and pass.
         // [START createwithemail]
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
           // Handle Errors here.
+
           let errorCode = error.code;
           let errorMessage = error.message;
           // [START_EXCLUDE]
@@ -48,4 +49,5 @@ class Register {
         });
         // [END createwithemail]
       }
+      
 }
