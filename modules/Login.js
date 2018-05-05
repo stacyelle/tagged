@@ -10,8 +10,8 @@ class Login {
       $("#logo-jumbotron").animate({ 
           position: "absolute",
           bottom: viewportHeight / 6,
-          width: "50px", //800
-          height: "50px" //400
+          width: "400", 
+          height: "200" 
       });
       $(".regForm").animate({
         left: "-150%"
@@ -20,14 +20,12 @@ class Login {
           left: "45%"
       });
   }
-  toggleSignIn() {
+  toggleSignIn(email, password) {
     if (firebase.auth().currentUser) {
       // [START signout]
       firebase.auth().signOut();
       // [END signout]
     } else {
-      let email = $('.email').value;
-      let password = $('.password').value;
       if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -56,5 +54,7 @@ class Login {
     }
     $('.quickstart-sign-in').disabled = true;
   }
+  
+  
 }
     
