@@ -23,7 +23,7 @@ p.tagline {
     height:400px;
     left: -100%;
     position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
+    top:35%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
 
