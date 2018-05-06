@@ -32,7 +32,7 @@ p.tagline {
     height:400px;
     right: -100%;
     position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
+    top:40%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
 
