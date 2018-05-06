@@ -17,34 +17,52 @@ p.tagline {
     padding-top: 180px;
 }
 
-hr {
-    position: relative;
-    top: 120px;
-    color: white;
-}
 
 .regForm {
     width:300px;
     height:400px;
     left: -100%;
     position:fixed;
-    top:30%; margin-top:-50px; /* vertical center */
+    top:50%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
+
 .logForm {
     width:300px;
     height:400px;
     right: -100%;
     position:fixed;
-    top:30%; margin-top:-50px; /* vertical center */
+    top:50%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
+
 label {
     color: white;
 }
+
+div.forgroup > input::placeholder {
+    color: rgb(190, 222, 231);
+  }
+
+div.forgroup > input:focus {
+  color: rgb(190, 222, 231);
+  background-color: rgb(54, 68, 71, 0.7);
+  outline: none;
+  box-shadow: none;
+  border: 1px solid  rgb(190, 222, 231);
+}
+
 .logBtn, .regBtn {
     margin-top: 1rem;
 }
+
+.logBtn:focus, .regBtn:focus {
+    margin-top: 1rem;
+    box-shadow: none;
+    outline: none;
+}
+
+
 .jumbotron {
     background-image: url("../img/background.jpg");
     background-color: whitesmoke;
@@ -65,7 +83,7 @@ label {
     margin-top: 10%; 
 }
 
-.arrow {
+#arrow {
     display: block;
     position: fixed;
     bottom: 35px;
@@ -129,7 +147,7 @@ div.buttons {
     display: flex;
     width: 700px;
     align-content: center;
-    top: 0px;
+    top: 20px;
     /* padding-left: 400px; */
     margin-left: auto;
     margin-right: auto;

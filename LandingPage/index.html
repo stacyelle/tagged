@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -44,22 +45,26 @@
         <div class="buttons">
             <a href="#" class="transparent_btn login">login</a>
             <a href="#" class="transparent_btn register">register</a>
-            <a href="#" class="transparent_btn tagged">what's tagged</a>
+            <a href="#intro" class="transparent_btn tagged">what's tagged</a>
 
         </div>
 
         <form class="regForm">
             <div class="forgroup">
-                <label for="regPlateNum">Email</label>
+                <label for="regPlateNum">Plate Number</label>
                 <input type="username" class="form-control transparent_form" id="regPlateNum" placeholder="Enter plate number">
             </div>
             <div class="forgroup">
-            <label for="emailAddress">Email Address</label>
-            <input type="email" class="form-control transparent_form" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" class="form-control transparent_form" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="forgroup">
+                <label for="vin">VIN Number</label>
+                <input type="vin" class="form-control transparent_form" id="vin" placeholder="Enter VIN Number">
             </div>
             <div class="forgroup">
                 <label for="regPassword">Password</label>
-                <input type="password" class="form-control transparent_form" id="regPassword" placeholder="Password">
+                <input type="password" class="form-control transparent_form" id="regPassword" placeholder="Create a password">
             </div class="regbtn">
 
             <button type="submit" class="transparent_btn regBtn">Register</button>
@@ -67,8 +72,8 @@
 
         <form class="logForm">
             <div class="forgroup">
-                <label for="plateNum">Email</label>
-                <input type="email" class="form-control transparent_form" id="plateNum" placeholder="Enter plate number">
+                <label for="email">Email</label>
+                <input type="email" class="form-control transparent_form" id="email" placeholder="Enter email address">
             </div>
             <div class="forgroup">
                 <label for="logPassword">Password</label>
@@ -81,7 +86,9 @@
         <div class="logo">
             <img id="logo-jumbotron" src="../img/logo.png" />
         </div>
-        <img class='arrow' src='../img/down_arrow.png' />
+        <div class="arrow">
+            <img id='arrow' src='../img/down_arrow.png' />
+        </div>
     </div>
     <div id="intro">
         <div class="container d-flex">
