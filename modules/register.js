@@ -8,7 +8,7 @@ class Register {
         
         $("#logo-jumbotron").animate({ 
             position: "absolute",
-            bottom: viewportHeight / 6,
+            bottom: viewportHeight / 8,
             width: "400",
             height: "200"
         });
@@ -35,7 +35,6 @@ class Register {
         // [START createwithemail]
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
           // Handle Errors here.
-
           let errorCode = error.code;
           let errorMessage = error.message;
           // [START_EXCLUDE]
@@ -46,7 +45,7 @@ class Register {
           }
           console.log(error);
           // [END_EXCLUDE]
-        });
+        })
         // [END createwithemail]
       }
       

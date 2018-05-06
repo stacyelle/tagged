@@ -9,7 +9,7 @@ class Login {
       
       $("#logo-jumbotron").animate({ 
           position: "absolute",
-          bottom: viewportHeight / 6,
+          bottom: viewportHeight / 8,
           width: "400", 
           height: "200" 
       });
