@@ -1,0 +1,58 @@
+body {
+    background-color: cadetblue;
+}
+
+#logo {
+    width: 40%;
+    top: 5px;
+}
+
+.button {
+    width: 100%;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.transparent_btn {
+	display: inline-block;
+	padding: 10px 14px;
+	color: whitesmoke;
+	border: 1px solid whitesmoke;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 100%;
+	background-color: rgba(255,255,255, 0);
+	border-radius: 15px;
+	transition: background-color 300ms ease;
+    cursor: pointer;
+    font-family: "Questrial", sans-serif;
+}
+.transparent_btn:hover {
+	background-color: rgba(255,255,255, 0.3);
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* Animated Search Bar
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+// When the input field gets focus, change its width to 100% //
+input[type=text]:focus {
+    width: 100%;
+}
+*/
+
+.header {
+    height: 150px;
+    background-image: url("../img/background-header.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
