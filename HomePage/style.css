@@ -1,6 +1,7 @@
 body {
     background-color: cadetblue;
 }
+<<<<<<< HEAD
 h1.display-4 {
     position: relative;
     top: 140px;
@@ -123,13 +124,32 @@ div.container {
 }
 
 .transparent_btn, .transparent_form {
+=======
+
+#logo {
+    width: 40%;
+    top: 5px;
+}
+
+.button {
+    width: 100%;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.transparent_btn {
+>>>>>>> 7aa0451b890b3ebd8c68f34d49a195bb88a6efe9
 	display: inline-block;
 	padding: 10px 14px;
 	color: whitesmoke;
 	border: 1px solid whitesmoke;
 	text-decoration: none;
 	font-size: 14px;
+<<<<<<< HEAD
 	line-height: 120%;
+=======
+	line-height: 100%;
+>>>>>>> 7aa0451b890b3ebd8c68f34d49a195bb88a6efe9
 	background-color: rgba(255,255,255, 0);
 	border-radius: 15px;
 	transition: background-color 300ms ease;
@@ -142,6 +162,7 @@ div.container {
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 div.buttons {
     position: relative;
     display: flex;
@@ -153,3 +174,28 @@ div.buttons {
     margin-right: auto;
     justify-content: space-between;
 }
+=======
+/* Animated Search Bar
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+// When the input field gets focus, change its width to 100% //
+input[type=text]:focus {
+    width: 100%;
+}
+*/
+
+.header {
+    height: 150px;
+    background-image: url("../img/background-header.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+>>>>>>> 7aa0451b890b3ebd8c68f34d49a195bb88a6efe9
