@@ -23,7 +23,7 @@ p.tagline {
     height:400px;
     left: -100%;
     position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
+    top:35%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
 
@@ -32,7 +32,7 @@ p.tagline {
     height:400px;
     right: -100%;
     position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
+    top:40%; margin-top:-50px; /* vertical center */
     margin-left:-100px; /* horizontal center */  
 }
 
@@ -68,7 +68,7 @@ div.forgroup > input:focus {
     background-color: whitesmoke;
     width: 100%;
     margin-bottom: 10px;
-    min-height: 700px;
+    min-height: 120vh;
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
@@ -122,7 +122,7 @@ div.container {
     padding-left: 30px;
 }
 
-.transparent_btn, .transparent_form {
+.transparent_btn {
 	display: inline-block;
 	padding: 10px 14px;
 	color: whitesmoke;
@@ -140,16 +140,4 @@ div.container {
 	background-color: rgba(255,255,255, 0.3);
     color: whitesmoke;
     text-decoration: none;
-}
-
-div.buttons {
-    position: relative;
-    display: flex;
-    width: 700px;
-    align-content: center;
-    top: 20px;
-    /* padding-left: 400px; */
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-between;
 }

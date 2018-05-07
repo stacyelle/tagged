@@ -15,8 +15,8 @@ $(function () {
     $(".regBtn").click(function () {
         let email = $("#emailAddress").val();
         let pass = $("#regPassword").val();
-        let plate = $("#regPlateNum").val();
         registerBtn.handleSignUp(email, pass);
+
     });
 
     $(".logBtn").click(function () {
@@ -26,9 +26,7 @@ $(function () {
     });
 
     firebase.auth().onAuthStateChanged(function (user) {
-        // [START_EXCLUDE silent]
-        // document.getElementById('quickstart-verify-email').disabled = true;
-        // [END_EXCLUDE]
+        
         if (user) {
             // User is signed in.
             var displayName = user.displayName;
