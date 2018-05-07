@@ -20,12 +20,9 @@ class Login {
           left: "45%"
       });
   }
-  toggleSignIn(email, password) {
-    if (firebase.auth().currentUser) {
-      // [START signout]
-      firebase.auth().signOut();
-      // [END signout]
-    } else {
+
+    signIn(email, password) {
+     
       if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -36,6 +33,7 @@ class Login {
       }
       // Sign in with email and pass.
       // [START authwithemail]
+    
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -47,14 +45,11 @@ class Login {
           alert(errorMessage);
         }
         console.log(error);
-        $('.quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
       });
       // [END authwithemail]
-    }
-    $('.quickstart-sign-in').disabled = true;
+
   }
-  
   
 }
     
