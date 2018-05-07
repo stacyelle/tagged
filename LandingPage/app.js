@@ -30,7 +30,7 @@ $(function () {
             // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
-        },1000);
+        },800);
             console.log("signed in");
             var displayName = user.displayName;
             var email = user.email;

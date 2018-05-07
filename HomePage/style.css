@@ -1,7 +1,6 @@
 body {
     background-color: cadetblue;
 }
-<<<<<<< HEAD
 h1.display-4 {
     position: relative;
     top: 140px;
@@ -18,25 +17,6 @@ p.tagline {
     padding-top: 180px;
 }
 
-
-.regForm {
-    width:300px;
-    height:400px;
-    left: -100%;
-    position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
-    margin-left:-100px; /* horizontal center */  
-}
-
-.logForm {
-    width:300px;
-    height:400px;
-    right: -100%;
-    position:fixed;
-    top:50%; margin-top:-50px; /* vertical center */
-    margin-left:-100px; /* horizontal center */  
-}
-
 label {
     color: white;
 }
@@ -51,16 +31,6 @@ div.forgroup > input:focus {
   outline: none;
   box-shadow: none;
   border: 1px solid  rgb(190, 222, 231);
-}
-
-.logBtn, .regBtn {
-    margin-top: 1rem;
-}
-
-.logBtn:focus, .regBtn:focus {
-    margin-top: 1rem;
-    box-shadow: none;
-    outline: none;
 }
 
 
@@ -92,7 +62,6 @@ div.forgroup > input:focus {
     margin: 0 auto;
 }
 
-
 div.container {
     font-family: "Questrial", sans-serif;
     color: whitesmoke;
@@ -123,9 +92,6 @@ div.container {
     padding-left: 30px;
 }
 
-.transparent_btn, .transparent_form {
-=======
-
 #logo {
     width: 40%;
     top: 5px;
@@ -138,18 +104,14 @@ div.container {
 }
 
 .transparent_btn {
->>>>>>> 7aa0451b890b3ebd8c68f34d49a195bb88a6efe9
 	display: inline-block;
 	padding: 10px 14px;
 	color: whitesmoke;
 	border: 1px solid whitesmoke;
 	text-decoration: none;
 	font-size: 14px;
-<<<<<<< HEAD
 	line-height: 120%;
-=======
 	line-height: 100%;
->>>>>>> 7aa0451b890b3ebd8c68f34d49a195bb88a6efe9
 	background-color: rgba(255,255,255, 0);
 	border-radius: 15px;
 	transition: background-color 300ms ease;
@@ -162,7 +124,6 @@ div.container {
     text-decoration: none;
 }
 
-<<<<<<< HEAD
 div.buttons {
     position: relative;
     display: flex;
@@ -174,7 +135,6 @@ div.buttons {
     margin-right: auto;
     justify-content: space-between;
 }
-=======
 /* Animated Search Bar
 input[type=text] {
     width: 130px;
@@ -198,4 +158,3 @@ input[type=text]:focus {
     -o-background-size: cover;
     background-size: cover;
 }
->>>>>>> 7aa0451b890b3ebd8c68f34d49a195bb88a6efe9
