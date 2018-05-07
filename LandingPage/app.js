@@ -4,11 +4,13 @@ $(function () {
 
     $(".register").click(() => {
         registerBtn.registerButtonAnimate();
-        $(".arrow").hide();
+        $(".arrow").fadeOut();
+        $(".regForm").fadeIn();
     });
     $(".login").click(() => {
         loginBtn.loginButtonAnimate();
-        $(".arrow").hide();
+        $(".arrow").fadeOut();
+        $(".logForm").fadeIn();
     });
 
     // button submits for register and login
@@ -23,6 +25,22 @@ $(function () {
         let pass = $("#logPassword").val();
         loginBtn.signIn(user, pass);
     });
+
+    // smooth scroll with link clicks
+  $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      $(".arrow").fadeOut();
+      $(".regForm").fadeOut();
+      $(".logForm").fadeOut();
+
+    }
+});
     let stateListener = () => {
     firebase.auth().onAuthStateChanged(function (user) {
 
