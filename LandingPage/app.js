@@ -27,7 +27,7 @@ $(function () {
     });
 
     // smooth scroll with link clicks
-  $('a[href^="#"]').on('click', function(event) {
+  $('.tagged').on('click', function(event) {
     var target = $(this.getAttribute('href'));
 
     if( target.length ) {
