@@ -36,7 +36,7 @@ $(function () {
     });
 
     // smooth scroll with link clicks
-  $('a[href^="#"]').on('click', function(event) {
+  $('.tagged').on('click', function(event) {
     var target = $(this.getAttribute('href'));
 
     if( target.length ) {
@@ -54,10 +54,46 @@ $(function () {
     firebase.auth().onAuthStateChanged(function (user) {
 
         if (user) {
-            // User is signed in.
+            var vin = $("#vin").val();
+            var plate = $("#regPlateNum").val();
+            var uid = user.uid;
+            var make = null;
+            var model = null;
+            var year = null;
+            firebase.database().ref(uid).once('value').then(function(snapshot) {
+                const user = snapshot.val();
+                if (user) {
+                    console.log("user exists!");
+                } else {
+                function writeUserData(uid, plate, vin ) {
+                
+                    firebase.database().ref(uid).set({
+                      plate: plate,
+                      vin: vin,
+                      messages: {"0":"Welcome to Tagged!"}
+                    });
+                  }
+                writeUserData(uid, plate, vin);
+                }    
+            });
+
+            $.get({
+                url:  `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
+                method: "GET",
+                success: function(response) {
+                    console.log(response);
+                    make = response.Results[0].Make;
+                    model = response.Results[0].Model;
+                    year = response.Results[0].ModelYear;
+                    console.log(make);
+                    console.log(model);
+                    console.log(year);
+                }   
+            });
+           // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
-        },800);
+        },900);
             console.log("signed in");          
         }
   
