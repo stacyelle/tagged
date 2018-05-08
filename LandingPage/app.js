@@ -95,7 +95,10 @@ $(function () {
                     console.log(year);
                 }   
             });
+<<<<<<< HEAD
         
+=======
+>>>>>>> master
            // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
