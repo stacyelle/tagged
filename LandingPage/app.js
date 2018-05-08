@@ -89,7 +89,7 @@ $(function () {
                     console.log(model);
                     console.log(year);
                 }   
-            })
+            });
            // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
