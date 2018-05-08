@@ -1,3 +1,5 @@
+/* code below was originally in /LandingPage/style.css
+
 body {
     background-color: cadetblue;
 }
@@ -91,6 +93,17 @@ div.container {
     text-align: left;
     padding-left: 30px;
 }
+*/
+.header {
+    height: 200px;
+    background-image: url("../img/background-header.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 #logo {
     width: 40%;
@@ -130,31 +143,57 @@ div.buttons {
     width: 700px;
     align-content: center;
     top: 20px;
-    /* padding-left: 400px; */
     margin-left: auto;
     margin-right: auto;
     justify-content: space-between;
 }
-/* Animated Search Bar
+
+.searchBar {
+    background-color: #344C7A;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    background-color: #344C7A;
+
+}
+    
 input[type=text] {
+    background-color: #344C7A;
+    color:#94B2CA;
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
-// When the input field gets focus, change its width to 100% //
+/* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
+    background-color: #C1CFDE;
     width: 100%;
 }
-*/
 
-.header {
-    height: 150px;
-    background-image: url("../img/background-header.jpg");
-    background-repeat: repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.container-fluid {
+  height: 700px; /* whatever you need */
+  display:table;
+  width:100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  
 }
+
+.inbox {
+  width:100%;
+  height: 500px;
+  background-color: #C1CFDE;
+} 
+
+.compose {
+    width:100%;
+    height: 500px;
+    background-color: #8AA3BA;
+  }
+
+  p {
+      margin-left: 50px;
+  }
