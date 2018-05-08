@@ -90,7 +90,7 @@ $(function () {
                     console.log(year);
                 }   
             })
-            User is signed in.
+           // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
         },900);
