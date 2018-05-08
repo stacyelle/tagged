@@ -60,6 +60,9 @@ $(function () {
             var make = null;
             var model = null;
             var year = null;
+
+    
+   
             firebase.database().ref(uid).once('value').then(function(snapshot) {
                 const user = snapshot.val();
                 if (user) {
@@ -76,12 +79,14 @@ $(function () {
                 writeUserData(uid, plate, vin);
                 }    
             });
-
+        
+       
             $.get({
                 url:  `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
                 method: "GET",
                 success: function(response) {
                     console.log(response);
+                   
                     make = response.Results[0].Make;
                     model = response.Results[0].Model;
                     year = response.Results[0].ModelYear;
@@ -89,11 +94,12 @@ $(function () {
                     console.log(model);
                     console.log(year);
                 }   
-            })
-            User is signed in.
+            });
+        
+           // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
-        },900);
+        },500);
             console.log("signed in");          
         }
   
