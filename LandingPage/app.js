@@ -57,7 +57,7 @@ $(function () {
             // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
-        },800);
+        },900);
             console.log("signed in");          
         }
   
