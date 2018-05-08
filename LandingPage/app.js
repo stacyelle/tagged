@@ -17,7 +17,16 @@ $(function () {
     $(".regBtn").click(function () {
         let email = $("#emailAddress").val();
         let pass = $("#regPassword").val();
+        let vin = $("#vin").val();
         registerBtn.handleSignUp(email, pass);
+        function writeUserData(userId, plate, vin) {
+            firebase.database().ref(userId).set({
+                plate: plate,
+                vin: vin,
+                messages: ["Welcome to Tagged!"]
+            });
+        }
+
     });
     
     $(".logBtn").click(function () {
@@ -45,39 +54,47 @@ $(function () {
     firebase.auth().onAuthStateChanged(function (user) {
 
         if (user) {
-            // User is signed in.
+            var vin = $("#vin").val();
+            var plate = $("#regPlateNum").val();
+            var uid = user.uid;
+            var make = null;
+            var model = null;
+            var year = null;
+            firebase.database().ref(uid).once('value').then(function(snapshot) {
+                const user = snapshot.val();
+                if (user) {
+                    console.log("user exists!");
+                } else {
+                function writeUserData(uid, plate, vin ) {
+                
+                    firebase.database().ref(uid).set({
+                      plate: plate,
+                      vin: vin,
+                      messages: {"0":"Welcome to Tagged!"}
+                    });
+                  }
+                writeUserData(uid, plate, vin);
+                }    
+            });
+
+            $.get({
+                url:  `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
+                method: "GET",
+                success: function(response) {
+                    console.log(response);
+                    make = response.Results[0].Make;
+                    model = response.Results[0].Model;
+                    year = response.Results[0].ModelYear;
+                    console.log(make);
+                    console.log(model);
+                    console.log(year);
+                }   
+            });
+           // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
-        },800);
-            console.log("signed in");
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            console.log(uid);
-  
-            var userId = firebase.auth().currentUser.uid;
-            var plate = $("#regPlateNum").val();
-            var vin = $('#vin').val();
-             
-                firebase.database().ref(userId).once('value').then(function (snapshot) {
-                    console.log(snapshot.val());
-                });
-                function writeUserData(userId, plate, vin) {
-                    // let email = $("#emailAddress").val();
-                    // let pass = $("#regPassword").val();
-                    firebase.database().ref(userId).set({
-                        plate: plate,
-                        vin: vin,
-                        messages: ["Welcome to Tagged!"]
-                    });
-                }
-                
-                writeUserData(userId, plate, vin);       
-            
+        },900);
+            console.log("signed in");          
         }
   
     });
