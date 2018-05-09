@@ -185,9 +185,5 @@ input[type=text]:focus {
   }
 
   p {
-      margin-left: 50px;
-<<<<<<< HEAD
-  }
-=======
-  }
->>>>>>> master
+    margin-left: 50px;
+}
