@@ -6,12 +6,16 @@ $(function(){
         window.location = '../LandingPage/index.html';
         console.log("signed out");
      });
-     $(".data").click(function () {
-    let uid = firebase.auth().currentUser;
-   // let ref = firebase.database().ref("users/" + uid);
-    console.log(uid);
-
-     });
-
+     firebase.auth().onAuthStateChanged((user) => {
+        if (user == null) {
+          //  window.location = '../LandingPage/index.html';
+        }
+        else {
+            // TODO: start actual work
+            let uid = firebase.auth().currentUser.uid;
+            console.log(uid);
+        }
+      });
+     
 });
 
