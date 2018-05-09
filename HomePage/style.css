@@ -165,3 +165,19 @@ input[type=text]:focus {
 }
 
 /* ------------- search bar code ends ----------- */
+
+section {
+    width: 100%;
+}
+
+.inbox {
+    background-color: #ff9e2c;
+    float: left;
+    width: 50%;
+}
+
+.chatbox {
+    background-color: #b6701e;
+    float: left;
+    width: 50%;
+}
