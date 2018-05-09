@@ -1,14 +1,14 @@
 $(function () {
-    let registerBtn = new Register();
-    let loginBtn = new Login();
+    let registration = new Register();
+    let login = new Login();
 
     $(".register").click(() => {
-        registerBtn.registerButtonAnimate();
+        registration.registerButtonAnimate();
         $(".arrow").fadeOut();
         $(".regForm").fadeIn();
     });
     $(".login").click(() => {
-        loginBtn.loginButtonAnimate();
+        login.loginButtonAnimate();
         $(".arrow").fadeOut();
         $(".logForm").fadeIn();
     });
@@ -17,87 +17,66 @@ $(function () {
     $(".regBtn").click(function () {
         let email = $("#emailAddress").val();
         let pass = $("#regPassword").val();
-        let vin = $("#vin").val();
-        registerBtn.handleSignUp(email, pass);
-        function writeUserData(userId, plate, vin) {
-            firebase.database().ref(userId).set({
-                plate: plate,
-                vin: vin,
-                messages: ["Welcome to Tagged!"]
-            });
-        }
+        registration.handleSignUp(email, pass);
 
     });
-    
+
     $(".logBtn").click(function () {
         let user = $("#email").val();
         let pass = $("#logPassword").val();
-        loginBtn.signIn(user, pass);
+        login.signIn(user, pass);
     });
 
     // smooth scroll with link clicks
-  $('.tagged').on('click', function(event) {
-    var target = $(this.getAttribute('href'));
+    $('.tagged').on('click', function (event) {
+        var target = $(this.getAttribute('href'));
 
-    if( target.length ) {
-      event.preventDefault();
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      $(".arrow").fadeOut();
-      $(".regForm").fadeOut();
-      $(".logForm").fadeOut();
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            $(".arrow").fadeOut();
+            $(".regForm").fadeOut();
+            $(".logForm").fadeOut();
 
-    }
-});
-    let stateListener = () => {
-    firebase.auth().onAuthStateChanged(function (user) {
-
-        if (user) {
-            var vin = $("#vin").val();
-            var plate = $("#regPlateNum").val();
-            var uid = user.uid;
-            var make = null;
-            var model = null;
-            var year = null;
-            firebase.database().ref(uid).once('value').then(function(snapshot) {
-                const user = snapshot.val();
-                if (user) {
-                    console.log("user exists!");
-                } else {
-                function writeUserData(uid, plate, vin ) {
-                
-                    firebase.database().ref(uid).set({
-                      plate: plate,
-                      vin: vin,
-                      messages: {"0":"Welcome to Tagged!"}
-                    });
-                  }
-                writeUserData(uid, plate, vin);
-                }    
-            });
-
-            $.get({
-                url:  `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
-                method: "GET",
-                success: function(response) {
-                    console.log(response);
-                    make = response.Results[0].Make;
-                    model = response.Results[0].Model;
-                    year = response.Results[0].ModelYear;
-                    console.log(make);
-                    console.log(model);
-                    console.log(year);
-                }   
-            });
-           // User is signed in.
-        setTimeout(function(){
-            window.location = '../HomePage/index.html';
-        },900);
-            console.log("signed in");          
         }
-  
     });
-}
-stateListener();
+    let stateListener = () => {
+        firebase.auth().onAuthStateChanged(function (user) {
+
+            if (user) {
+                let uid = user.uid;
+
+                firebase.database().ref(`users/${uid}`).once('value').then(function (snapshot) {
+                    const user = snapshot.val();
+                    console.log();
+                    if (user == null) {
+
+                        let vin = $("#vin").val();
+                        let plate = $("#regPlateNum").val();
+                        $.get({
+                            url: `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
+                            method: "GET",
+                            success: function (response) {
+
+                                let make = response.Results[0].Make;
+                                let model = response.Results[0].Model;
+                                let year = response.Results[0].ModelYear;
+                                console.log("car api started");
+                                registration.writeUserData(uid, plate, vin, make, model, year);
+                            }
+
+                        }).then(() => {
+                            window.location ='../HomePage/index.html';
+                       });
+                    }else {
+                        window.location ='../HomePage/index.html';
+                    }
+                });
+            };
+        });
+    };
+
+    stateListener();
 });
