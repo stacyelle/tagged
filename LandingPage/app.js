@@ -61,26 +61,6 @@ $(function () {
             var model = null;
             var year = null;
 
-    
-   
-            firebase.database().ref(uid).once('value').then(function(snapshot) {
-                const user = snapshot.val();
-                if (user) {
-                    console.log("user exists!");
-                } else {
-                function writeUserData(uid, plate, vin ) {
-                
-                    firebase.database().ref(uid).set({
-                      plate: plate,
-                      vin: vin,
-                      messages: {"0":"Welcome to Tagged!"}
-                    });
-                  }
-                writeUserData(uid, plate, vin);
-                }    
-            });
-        
-       
             $.get({
                 url:  `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
                 method: "GET",
@@ -95,11 +75,28 @@ $(function () {
                     console.log(year);
                 }   
             });
-<<<<<<< HEAD
+   
+            firebase.database().ref(uid).once('value').then(function(snapshot) {
+                const user = snapshot.val();
+                if (user) {
+                    console.log("user exists!");
+                } else {
+                function writeUserData(uid, plate, vin, make, model, year ) {
+                
+                    firebase.database().ref(uid).set({
+                      plate: plate,
+                      vin: vin,
+                      make: make,
+                      model: model,
+                      year: year,
+                      messages: {"0":"Welcome to Tagged!"}
+                    });
+                  }
+                writeUserData(uid, plate, vin, make, model, year);
+                }    
+            });
         
-=======
->>>>>>> master
-           // User is signed in.
+          // User is signed in.
         setTimeout(function(){
             window.location = '../HomePage/index.html';
         },500);
@@ -109,4 +106,5 @@ $(function () {
     });
 }
 stateListener();
+
 });
