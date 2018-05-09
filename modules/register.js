@@ -45,12 +45,13 @@ class Register {
           }
           console.log(error);
           // [END_EXCLUDE]
-        })
+        }).then
         // [END createwithemail]
+
       }
       writeUserData(uid, plate, vin, make, model, year) {
 
-        firebase.database().ref(uid).set({
+        firebase.database().ref(`users/${uid}`).set({
             plate: plate,
             vin: vin,
             make: make,

@@ -17,7 +17,6 @@ $(function () {
     $(".regBtn").click(function () {
         let email = $("#emailAddress").val();
         let pass = $("#regPassword").val();
-        let vin = $("#vin").val();
         registration.handleSignUp(email, pass);
 
     });
@@ -47,39 +46,37 @@ $(function () {
         firebase.auth().onAuthStateChanged(function (user) {
 
             if (user) {
-                var vin = $("#vin").val();
-                var plate = $("#regPlateNum").val();
-                var uid = user.uid;
-                var make = null;
-                var model = null;
-                var year = null;
-                $.get({
-                    url: `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
-                    method: "GET",
-                    success: function (response) {
+                let uid = user.uid;
 
-                        make = response.Results[0].Make;
-                        model = response.Results[0].Model;
-                        year = response.Results[0].ModelYear;
-                        console.log("car api started");
+                firebase.database().ref(`users/${uid}`).once('value').then(function (snapshot) {
+                    const user = snapshot.val();
+                    console.log();
+                    if (user == null) {
 
-                    }
+                        let vin = $("#vin").val();
+                        let plate = $("#regPlateNum").val();
+                        $.get({
+                            url: `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
+                            method: "GET",
+                            success: function (response) {
 
-                }).then(() => {
-                    firebase.database().ref(uid).once('value').then(function (snapshot) {
-                        const user = snapshot.val();
-                        console.log("database starts");
-                        if (user) {
-                            console.log("user exists!");
-                        } else { 
-                            registration.writeUserData(uid, plate, vin, make, model, year);
-                        }
-                    }).then(() => {
+                                let make = response.Results[0].Make;
+                                let model = response.Results[0].Model;
+                                let year = response.Results[0].ModelYear;
+                                console.log("car api started");
+                                registration.writeUserData(uid, plate, vin, make, model, year);
+                            }
+
+                        }).then(() => {
+                            window.location ='../HomePage/index.html';
+                       });
+                    }else {
                         window.location ='../HomePage/index.html';
-                    });
+                    }
                 });
-            }
+            };
         });
-    }
+    };
+
     stateListener();
 });

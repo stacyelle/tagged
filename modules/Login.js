@@ -4,10 +4,17 @@ class Login {
   }
   renderHomePage() {
     let uid = firebase.auth().currentUser.uid;
-    let dataBase = firebase.database().ref('users/' + uid);
-    
+    return firebase.database().ref(`/users/${uid}`).once('value').then(function(snapshot) {
+      let userData = snapshot.val();
+      console.log(userData);
       $(".testRe").append(`<p>${uid}</p>
-                          <p>${dataBase}</p>`);
+                          <p>${userData.make}</p>
+                          <p>${userData.model}</p>
+                          <p>${userData.plate}</p>
+                          <p>${userData.vin}</p>
+                          <p>${userData.year}</p>
+                          <p>${userData.messages}</p>`);
+    });
   }
   loginButtonAnimate() {
     
