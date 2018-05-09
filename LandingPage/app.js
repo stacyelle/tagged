@@ -60,22 +60,6 @@ $(function () {
             var make = null;
             var model = null;
             var year = null;
-            firebase.database().ref(uid).once('value').then(function(snapshot) {
-                const user = snapshot.val();
-                if (user) {
-                    console.log("user exists!");
-                } else {
-                function writeUserData(uid, plate, vin ) {
-                
-                    firebase.database().ref(uid).set({
-                      plate: plate,
-                      vin: vin,
-                      messages: {"0":"Welcome to Tagged!"}
-                    });
-                  }
-                writeUserData(uid, plate, vin);
-                }    
-            });
 
             $.get({
                 url:  `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
@@ -89,10 +73,31 @@ $(function () {
                     console.log(model);
                     console.log(year);
                 }   
-            });
-           // User is signed in.
+            })
+            firebase.database().ref(`users/${uid}`).once('value').then(function(snapshot) {
+                const user = snapshot.val();
+                if (user) {
+                    console.log(user);
+                    console.log("user exists!");
+                } else {
+                    function writeUserData(uid, plate, vin ) {
+                    
+                        firebase.database().ref(`users/${uid}`).set({
+                          plate: plate,
+                          vin: vin,
+                          make: make,
+                          model: model,
+                          year: year,
+                          messages: {"0":"Welcome to Tagged!"}
+                        });
+                      }
+                    writeUserData(uid, plate, vin);            
+                }
+            })    
+
+            // User is signed in.
         setTimeout(function(){
-            window.location = '../HomePage/index.html';
+            // window.location = '../HomePage/index.html';
         },900);
             console.log("signed in");          
         }
@@ -100,4 +105,5 @@ $(function () {
     });
 }
 stateListener();
+
 });
