@@ -138,6 +138,7 @@ div.buttons {
     justify-content: space-between;
 }
 
+/* ------------- search bar code begins ----------- */
 .searchBar {
     background-color: #344C7A;
 }
@@ -163,27 +164,4 @@ input[type=text]:focus {
     width: 100%;
 }
 
-.container-fluid {
-  height: 700px; /* whatever you need */
-  display:table;
-  width:100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  
-}
-
-.inbox {
-  width:100%;
-  height: 500px;
-  background-color: #C1CFDE;
-} 
-
-.compose {
-    width:100%;
-    height: 500px;
-    background-color: #8AA3BA;
-  }
-
-  p {
-    margin-left: 50px;
-}
+/* ------------- search bar code ends ----------- */
