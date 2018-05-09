@@ -48,5 +48,15 @@ class Register {
         })
         // [END createwithemail]
       }
-      
+      writeUserData(uid, plate, vin, make, model, year) {
+
+        firebase.database().ref(uid).set({
+            plate: plate,
+            vin: vin,
+            make: make,
+            model: model,
+            year: year,
+            messages: { "0": "Welcome to Tagged!" }
+        });
+    } 
 }

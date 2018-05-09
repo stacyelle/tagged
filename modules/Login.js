@@ -1,9 +1,13 @@
 class Login {
   constructor() {
-
+   
   }
   renderHomePage() {
-    console.log("render homepage");
+    let uid = firebase.auth().currentUser.uid;
+    let dataBase = firebase.database().ref('users/' + uid);
+    
+      $(".testRe").append(`<p>${uid}</p>
+                          <p>${dataBase}</p>`);
   }
   loginButtonAnimate() {
     

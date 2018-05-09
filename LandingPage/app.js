@@ -1,14 +1,14 @@
 $(function () {
-    let registerBtn = new Register();
-    let loginBtn = new Login();
+    let registration = new Register();
+    let login = new Login();
 
     $(".register").click(() => {
-        registerBtn.registerButtonAnimate();
+        registration.registerButtonAnimate();
         $(".arrow").fadeOut();
         $(".regForm").fadeIn();
     });
     $(".login").click(() => {
-        loginBtn.loginButtonAnimate();
+        login.loginButtonAnimate();
         $(".arrow").fadeOut();
         $(".logForm").fadeIn();
     });
@@ -18,14 +18,14 @@ $(function () {
         let email = $("#emailAddress").val();
         let pass = $("#regPassword").val();
         let vin = $("#vin").val();
-        registerBtn.handleSignUp(email, pass);
+        registration.handleSignUp(email, pass);
 
     });
 
     $(".logBtn").click(function () {
         let user = $("#email").val();
         let pass = $("#logPassword").val();
-        loginBtn.signIn(user, pass);
+        login.signIn(user, pass);
     });
 
     // smooth scroll with link clicks
@@ -71,24 +71,11 @@ $(function () {
                         console.log("database starts");
                         if (user) {
                             console.log("user exists!");
-                        } else {
-                            function writeUserData(uid, plate, vin, make, model, year) {
-
-                                firebase.database().ref(uid).set({
-                                    plate: plate,
-                                    vin: vin,
-                                    make: make,
-                                    model: model,
-                                    year: year,
-                                    messages: { "0": "Welcome to Tagged!" }
-                                });
-                            }
-                            writeUserData(uid, plate, vin, make, model, year);
+                        } else { 
+                            registration.writeUserData(uid, plate, vin, make, model, year);
                         }
                     }).then(() => {
-                        loginBtn.renderHomePage();
-                    }).then(() => {
-                        window.location = '../HomePage/index.html';
+                        window.location ='../HomePage/index.html';
                     });
                 });
             }
