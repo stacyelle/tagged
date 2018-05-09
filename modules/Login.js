@@ -2,6 +2,9 @@ class Login {
   constructor() {
 
   }
+  renderHomePage() {
+    console.log("render homepage");
+  }
   loginButtonAnimate() {
     
       let viewportWidth = $(window).width();
