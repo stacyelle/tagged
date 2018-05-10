@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -22,28 +23,32 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Questrial" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="../modules/chat.js"></script>
     <script src="../modules/Login.js"></script>
     <script src="../modules/register.js"></script>
     <script src="../modules/carInfo.js"></script>
     <script src="../modules/dataBase.js"></script>
+    <script src="../modules/userSearch.js"></script>
+    <script src="../modules/sendMessage.js"></script>
     <script src="./app.js"></script>
     
-    <title>Tagged</title>
+    <title>Tagged | Inbox</title>
 </head>
 
 <body>
     <div class= "headerBar">
         <div class= "container">
             <div class = "row">  
-                <div class = "logo col-sm-6 col-left">
+                <div class = "logo col-8 ">
                     <div class="logo">
                         <img id="logo" src="../img/logo.png" />
                     </div>
                 </div>
-                <div class = "col-sm-6 col-right">
+                <div class = "col-4 col-right">
                     <div class="button">
+                        <a id="new-message" href="#" class="transparent_btn data">new message</a>
                         <a href="../LandingPage/index.html" class="transparent_btn logOut">sign out</a>
                         <a href="#" class="transparent_btn data">get data</a>
                     </div>
@@ -164,7 +169,19 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="row sendMessage">
+                <div class="search col-3">
+                    <input id="userSearch" class="search-input" type="text" placeholder="Enter Plate Number..." />
+                </div>
+                <div class="message-content col-8">
+                    <textarea id="messageContent" class="form-control" placeholder="Your Message Here..."rows="2"></textarea>
+                    <span class=""style="margin-top: 10px"></span>
+                </div>
+                <div class="send-button col-1">
+                    <button id="send-button" class="transparent_btn" id="btn-chat">send</button>
+                </div>
+            </div>
+        </div> 
     </div>
     
 </body>
@@ -273,6 +290,42 @@
         </div>
     </div>
 
-</body>
+    <div class="row">
+         <div class="container-fluid">
+            <div class="messageMenu">
+                <p class="my-info">My Info</p>
+                <div class="name testRe"></div>
+
+                  
+                    
+
+                </div>
+
+            <div class="messages">
+
+                    <div class="message">
+                            <p class="inbox-title">INBOX:</p>
+                            <div class="panel-body body-panel">
+                                <ul class="chat">
+                                    <div class="container-fluid"> 
+                                        <div class="row">
+                                            <div class="inbox">
+                                
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 </html>
+    
+                 
+                                    
+                                         
+                                         

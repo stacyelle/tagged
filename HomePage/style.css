@@ -42,6 +42,7 @@
 	transition: background-color 300ms ease;
     cursor: pointer;
     font-family: "Questrial", sans-serif;
+    margin: 10px 20px;
 }
 .transparent_btn:hover {
 	background-color: rgba(255,255,255, 0.3);
@@ -67,6 +68,158 @@ hr {
     background-color: #344C7A;
     }
 
+/* ------------- inbox css begins ----------- */
+.messageMenu {
+	float: left;
+	height: 100%;
+	width: 250px;
+	color: white;
+	text-align: center;
+    padding-top: 80px;
+    background-color: #344C7A;
+}
+
+.icon {
+	border: 2px solid white;
+    width: 70px;
+    height: 55px;
+    border-radius: 49px;
+    font-size: 34px;
+    margin: 0 auto;
+    padding-top: 14px;
+}
+
+.myname {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 23px;
+}
+
+.new {
+	background-color: #344C7A;
+    margin: 0 auto;
+    width: 170px;
+    height: 36px;
+    border-radius: 8px;
+    padding-top: 13px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.new:hover {
+	background-color: #C1CFDE;
+}
+
+.search {
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid #eee;
+}
+
+.search input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 20px;
+	padding-left: 80px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.messages {
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.message {
+	width: 90%;
+	border-bottom: 1px solid #eee;
+	padding: 30px 0px 45px 80px;
+	color: #999;
+}
+
+div.message {
+    border-bottom: none;
+}
+
+#userSearch, #messageContent {
+    background-color: rgba(255,255,255, 0);
+    border: 1px solid #FFF;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 120%;
+    font-family: 'Questrial', sans-serif;
+    color: whitesmoke;
+    margin-right: 0px;
+    border-radius: 0px;
+  }
+  
+  input.search-input::placeholder , textarea.form-control::placeholder {
+    color: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    padding: 9px;
+  }
+
+  
+  input:focus, textarea.form-control:focus { 
+    outline: none !important;
+    border-color: rgb(100, 9, 81);
+    box-shadow: 0 0 20px rgb(100, 15, 89);
+  }
+  
+  div.search {
+      border: none;
+  }
+  
+
+
+
+
+.container-fluid {
+    height: 100vh;
+    display:table;
+    width:100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    background-color: #C1CFDE;
+    
+} 
+
+.inbox {
+width:100%;
+height: 400px;
+background-color: #C1CFDE;
+} 
+
+.chatbox {
+    width:100%;
+    height: 600px;
+    background-color: #8AA3BA;
+}
+
+.panel.panel-primary {
+    margin: 10%;
+}
+
+.panel-heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chatPanel {
+    margin-top: 0px;
+}
+
+.btn-warning {
+    color: #C1CFDE;
+    background-color: #344C7A;
+    border-color: #344C7A;
+=======
 /* ------------- animated search bar css begins ----------- /
 .search {
     background-color: #344C7A;
