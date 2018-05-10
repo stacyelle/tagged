@@ -52,6 +52,7 @@ $(function () {
                     const user = snapshot.val();
                     console.log();
                     if (user == null) {
+
                     // writes user data to authentication database and user database if uid is not already in database
                         let vin = $("#vin").val();
                         let plate = $("#regPlateNum").val();
@@ -59,7 +60,6 @@ $(function () {
                             url: `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`,
                             method: "GET",
                             success: function (response) {
-
                                 let make = response.Results[0].Make;
                                 let model = response.Results[0].Model;
                                 let year = response.Results[0].ModelYear;

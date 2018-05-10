@@ -16,7 +16,6 @@ class Login {
     });
 
   }
-
   renderInbox() {
     let uid = firebase.auth().currentUser.uid;
       firebase.database().ref(`/users/${uid}/messages`).on('value', function(snapshot) {

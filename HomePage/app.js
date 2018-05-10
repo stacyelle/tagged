@@ -3,6 +3,7 @@ $(function(){
     let loginHome = new Login();
     let messaging = new Messaging();
 
+
     $("#userSearch").hide();
     $("#messageContent").hide();
     $("#send-button").hide();
@@ -38,7 +39,8 @@ $(function(){
         $("#userSearch").show();
         $("#messageContent").show();
         $("#send-button").show();
-    })
+    });   
+
 });
 
 

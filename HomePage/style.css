@@ -68,7 +68,6 @@ hr {
     background-color: #344C7A;
     }
 
-
 /* ------------- inbox css begins ----------- */
 .messageMenu {
 	float: left;
@@ -220,4 +219,214 @@ background-color: #C1CFDE;
     color: #C1CFDE;
     background-color: #344C7A;
     border-color: #344C7A;
+=======
+/* ------------- animated search bar css begins ----------- /
+.search {
+    background-color: #344C7A;
 }
+
+form {
+    display: block;
+    margin-top: 0em;
+    background-color: #344C7A;
+
+}
+    
+input[type=text] {
+    background-color: #344C7A;
+    color:#94B2CA;
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/ When the input field gets focus, change its width to 100% /
+input[type=text]:focus {
+    background-color: #C1CFDE;
+    width: 50%;
+}
+
+/* ------------- animated search bar css ends ----------- */
+
+/* ------------- inbox css begins ----------- */
+.messageMenu {
+	float: left;
+	height: 100%;
+	width: 250px;
+	color: white;
+	text-align: center;
+    padding-top: 80px;
+    background-color: #344C7A;
+}
+
+.icon {
+	border: 2px solid white;
+    width: 70px;
+    height: 55px;
+    border-radius: 49px;
+    font-size: 34px;
+    margin: 0 auto;
+    padding-top: 14px;
+}
+
+.myname {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 23px;
+}
+
+.new {
+	background-color: #344C7A;
+    margin: 0 auto;
+    width: 170px;
+    height: 36px;
+    border-radius: 8px;
+    padding-top: 13px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.new:hover {
+	background-color: #C1CFDE;
+}
+
+.search {
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid #eee;
+}
+
+.search input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 20px;
+	padding-left: 80px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.messages {
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.message {
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	padding: 30px 0px 45px 80px;
+	color: #999;
+}
+
+
+/* ------------- chatbox css begins ----------- */
+
+.container-fluid {
+    height: 100vh;
+    display:table;
+    width:100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    background-color: #C1CFDE;
+    
+} 
+
+.inbox {
+width:100%;
+height: 400px;
+background-color: #C1CFDE;
+} 
+
+.chatbox {
+    width:100%;
+    height: 600px;
+    background-color: #8AA3BA;
+}
+
+.panel.panel-primary {
+    margin: 10%;
+}
+
+.panel-heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chatPanel {
+    margin-top: 0px;
+}
+
+.btn-warning {
+    color: #C1CFDE;
+    background-color: #344C7A;
+    border-color: #344C7A;
+}
+/* ------------- chatbox css cont...----------- /
+.chatbox {
+background-color: #DCDEE0;
+position: absolute;
+right: 0px;
+width: 50%;
+height: 750px;
+}
+
+
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.panel-heading {
+    height: 50px;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.body-panel
+{
+    overflow-y: scroll;
+    height: 500px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+/* ------------- search bar css ends ----------- */
