@@ -21,7 +21,9 @@ class Login {
       firebase.database().ref(`/users/${uid}/messages`).on('value', function(snapshot) {
         let messagesObject = snapshot.val();
         let resultValues = Object.values(messagesObject);
+        resultValues = resultValues.reverse();
         let resultKeys = Object.keys(messagesObject);
+        resultKeys = resultKeys.reverse();
         for (var i = 0; i < resultValues.length; i++) {
           for (var i=0; i <resultKeys.length; i++) {
             $(".inbox").append(`<p class="message">${resultKeys[i]} : ${resultValues[i]}</p>`);
