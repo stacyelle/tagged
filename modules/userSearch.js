@@ -12,9 +12,9 @@ class Search {
             firebase.database().ref('users').orderByChild('plate').equalTo(plateOfRecipient).on("value", function(snapshot) { 
                 uidOfRecipient = snapshot.val();
                 if (uidOfRecipient){
-                    console.log("user exists!");
+                    return uidOfRecipient;
                 } else {
-                    console.log("user does not exist!");
+                     alert("Sorry, no matches");
                 }
         })
     }

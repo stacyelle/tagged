@@ -6,15 +6,16 @@ class Login {
     let uid = firebase.auth().currentUser.uid;
     return firebase.database().ref(`/users/${uid}`).once('value').then(function(snapshot) {
       let userData = snapshot.val();
-      console.log(userData);
-      $(".testRe").append(`<p>${uid}</p>
-                          <p>${userData.make}</p>
-                          <p>${userData.model}</p>
-                          <p>${userData.plate}</p>
-                          <p>${userData.vin}</p>
-                          <p>${userData.year}</p>
-                          <p>${userData.messages}</p>`);
+      $(".name").html(`Welcome ${userData.plate}</br><hr></br> 
+                       Car Specifications </br>
+                       Make: ${userData.make} </br>
+                       Model: ${userData.model} </br>
+                       Year: ${userData.year}`);
+      $(".message").append(`${userData.messages}`);
     });
+  }
+  renderSearchResult(result) {
+    
   }
   loginButtonAnimate() {
     
