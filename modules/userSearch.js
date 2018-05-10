@@ -9,13 +9,13 @@ class Messaging {
         
         //finds a user from their plate number, as input from another user
         plateOfRecipient = $("#userSearch").val()
-        console.log(plateOfRecipient);
+       
         firebase.database().ref('users').orderByChild('plate').equalTo(plateOfRecipient).on("value", function(snapshot) {
             uidOfRecipient = Object.keys(snapshot.val())[0];
-            console.log(uidOfRecipient);
+            
 
             if (uidOfRecipient){
-                console.log("user exists!");
+                
                 let dt = new Date();
                 let utcDate = dt.toUTCString(); 
          // sends a message to the user found above with a timestamp 

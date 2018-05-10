@@ -50,7 +50,7 @@ $(function () {
 
                 firebase.database().ref(`users/${uid}`).once('value').then(function (snapshot) {
                     const user = snapshot.val();
-                    console.log();
+                   
                     if (user == null) {
 
                     // writes user data to authentication database and user database if uid is not already in database
@@ -63,7 +63,7 @@ $(function () {
                                 let make = response.Results[0].Make;
                                 let model = response.Results[0].Model;
                                 let year = response.Results[0].ModelYear;
-                                console.log("car api started");
+                                
                                 registration.writeUserData(uid, plate, vin, make, model, year);
                             }
 
