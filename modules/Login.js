@@ -7,15 +7,29 @@ class Login {
     return firebase.database().ref(`/users/${uid}`).once('value').then(function(snapshot) {
       let userData = snapshot.val();
       console.log(userData);
-      $(".testRe").append(`<p>${uid}</p>
+      
+      $(".testRe").append(`<p class="plate">${userData.plate}</p>
                           <p>${userData.make}</p>
                           <p>${userData.model}</p>
-                          <p>${userData.plate}</p>
-                          <p>${userData.vin}</p>
                           <p>${userData.year}</p>
-                          <p>${userData.messages}</p>`);
+                          <p class="vin">${userData.vin}</p>`);
     });
+
   }
+  renderInbox() {
+    let uid = firebase.auth().currentUser.uid;
+      firebase.database().ref(`/users/${uid}/messages`).on('value', function(snapshot) {
+        let messagesObject = snapshot.val();
+        let resultValues = Object.values(messagesObject);
+        let resultKeys = Object.keys(messagesObject);
+        for (var i = 0; i < resultValues.length; i++) {
+          for (var i=0; i <resultKeys.length; i++) {
+            $(".inbox").append(`<p class="message">${resultKeys[i]} : ${resultValues[i]}</p>`);
+          }
+        }
+    }); 
+  }
+
   loginButtonAnimate() {
     
       let viewportWidth = $(window).width();
@@ -63,7 +77,8 @@ class Login {
       });
       // [END authwithemail]
 
-  }
+    }
   
 }
-    
+  
+ 
