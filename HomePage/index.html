@@ -23,10 +23,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Questrial" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="../modules/chat.js"></script>
     <script src="../modules/Login.js"></script>
-    <script src="../modules/Register.js"></script>
+    <script src="../modules/register.js"></script>
+    <script src="../modules/carInfo.js"></script>
     <script src="../modules/dataBase.js"></script>
     <script src="../modules/userSearch.js"></script>
     <script src="../modules/sendMessage.js"></script>
@@ -36,12 +38,7 @@
 </head>
 
 <body>
-    <div class="jumbotron align-items-center justify-content-center">
-        <div class="buttons">
-            <a href="#" class="transparent_btn logOut">log out</a>
-        </div>
-        </div>
-    <div class= "header">
+    <div class= "headerBar">
         <div class= "container">
             <div class = "row">  
                 <div class = "logo col-8 ">
@@ -51,19 +48,17 @@
                 </div>
                 <div class = "col-4 col-right">
                     <div class="button">
-                        <a href="#" class="transparent_btn data">new message</a>
+                        <a id="new-message" href="#" class="transparent_btn data">new message</a>
                         <a href="../LandingPage/index.html" class="transparent_btn logOut">sign out</a>
-<<<<<<< Updated upstream
-=======
                     </div>
                 </div>
             </div>
             <div class="row sendMessage">
                 <div class="search col-3">
-                    <input id="userSearch" class="search-input" type="text" placeholder="Enter Plate Number" />
+                    <input id="userSearch" class="search-input" type="text" placeholder="Enter Plate Number..." />
                 </div>
                 <div class="message-content col-8">
-                    <textarea id="messageContent" class="form-control" rows="2"></textarea>
+                    <textarea id="messageContent" class="form-control" placeholder="Your Message Here..."rows="2"></textarea>
                     <span class=""style="margin-top: 10px"></span>
                 </div>
                 <div class="send-button col-1">
@@ -78,7 +73,9 @@
     <div class="row">
          <div class="container-fluid">
             <div class="messageMenu">
+                <p class="my-info">My Info</p>
                 <div class="name testRe"></div>
+
                   
                     
 
@@ -97,7 +94,7 @@
                                 <ul class="chat">
                                     <div class="container-fluid"> 
                                         <div class="row">
-                                            <div class="inbox ">
+                                            <div class="inbox">
                                 
                                                 <p></p>
                                             </div>
@@ -105,20 +102,10 @@
                                     </div>    
                                     
                             </div>
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< Updated upstream
-    </div>
-
-    <!--Search Bar
-    <form>
-        <input type="text" name="search" placeholder="Search..">
-    </form>
-    -->
-=======
 
 
 </html>
@@ -217,7 +204,6 @@
             </div>
         </div>
     </div>
->>>>>>> Stashed changes
 
 </body>
 

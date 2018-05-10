@@ -1,5 +1,5 @@
 body {
-    background-color: cadetblue;
+    background-color: rgb(32, 80, 95);
 }
 h1.display-4 {
     position: relative;
@@ -69,6 +69,7 @@ div.forgroup > input:focus {
     width: 100%;
     margin-bottom: 10px;
     min-height: 120vh;
+    height: 700px;
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
@@ -76,6 +77,8 @@ div.forgroup > input:focus {
     text-align: center;
     justify-content: space-around;
     padding-top: 0px;
+    border-radius: none;
+    margin-bottom: 0px;
 }
 
 #logo-jumbotron {
@@ -106,7 +109,7 @@ div.container {
 	padding-bottom: 60px;
 	color: #3f263b;
 	position: relative;
-	bottom: 40px;
+	bottom: 0px;
 } 
 
 #intro h5, p {
@@ -120,6 +123,12 @@ div.container {
 .intro-header {
     text-align: left;
     padding-left: 30px;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
 }
 
 .transparent_btn {
