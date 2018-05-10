@@ -14,7 +14,7 @@
             storageBucket: "tagged-978dc.appspot.com",
             messagingSenderId: "509152854944"
         };
-        firebase.initializeApp(config);
+       firebase.initializeApp(config);
     </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
@@ -30,11 +30,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito|Questrial" rel="stylesheet">
     <script src="../modules/chat.js"></script>
     <script src="../modules/Login.js"></script>
-    <script src="../modules/Register.js"></script>
+    <script src="../modules/register.js"></script>
     <script src="../modules/carInfo.js"></script>
     <script src="../modules/dataBase.js"></script>
-    <script src="../app.js"></script>
     <script src="user-data.js"></script>
+    <script src="../modules/userSearch.js"></script>
+    <script src="./app.js"></script>
 
     <title>Tagged</title>
 </head>
@@ -49,10 +50,10 @@
 
         </div>
 
-        <form class="regForm">
+        <div class="regForm">
             <div class="forgroup">
                 <label for="regPlateNum">Plate Number</label>
-                <input type="username" class="form-control transparent_form" id="regPlateNum" placeholder="Enter plate number">
+                <input type="tester" class="form-control transparent_form" id="regPlateNum" placeholder="Enter plate number">
             </div>
             <div class="forgroup">
                 <label for="emailAddress">Email Address</label>
@@ -68,9 +69,9 @@
             </div class="regbtn">
 
             <button type="submit" class="transparent_btn regBtn">Register</button>
-        </form>
+        </div>
 
-        <form class="logForm">
+        <div class="logForm">
             <div class="forgroup">
                 <label for="email">Email</label>
                 <input type="email" class="form-control transparent_form" id="email" placeholder="Enter email address">
@@ -81,7 +82,7 @@
             </div>
 
             <button type="submit" class="transparent_btn logBtn">Login</button>
-        </form>
+        </div>
 
         <div class="logo">
             <img id="logo-jumbotron" src="../img/logo.png" />
