@@ -1,15 +1,21 @@
  // sends a message to the user found in the userSearch function     
-        var messageCount = 1;
-        var messageContent = null;
+       
+// class Message {
+//     constructor() {
+      
+//     }
 
         
-        function sendMessage() {                    
-                messageContent = $("#messageContent").val();
-                firebase.database().ref(`users/${uid}/messages`).update({
-                    [messageCount] : messageContent
-                    });
-                messageCount++;
-                }; 
+//     sendMessage() {   
+//         let messageCount = 1;
+//         let messageContent = null;                 
+//         messageContent = $("#messageContent").val();
+//         firebase.database().ref(`users/${uidOfRecipient}/messages`).update({
+//             [messageCount] : messageContent
+//             });
+//         messageCount++;
+//     }; 
 
+// }
         
        

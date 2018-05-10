@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -27,9 +28,11 @@
     <script src="../modules/Login.js"></script>
     <script src="../modules/Register.js"></script>
     <script src="../modules/dataBase.js"></script>
+    <script src="../modules/userSearch.js"></script>
+    <script src="../modules/sendMessage.js"></script>
     <script src="./app.js"></script>
     
-    <title>Tagged</title>
+    <title>Tagged | Inbox</title>
 </head>
 
 <body>
@@ -41,18 +44,73 @@
     <div class= "header">
         <div class= "container">
             <div class = "row">  
-                <div class = "logo col-sm-6 col-left">
+                <div class = "logo col-8 ">
                     <div class="logo">
                         <img id="logo" src="../img/logo.png" />
                     </div>
                 </div>
-                <div class = "col-sm-6 col-right">
+                <div class = "col-4 col-right">
                     <div class="button">
+                        <a href="#" class="transparent_btn data">new message</a>
                         <a href="../LandingPage/index.html" class="transparent_btn logOut">sign out</a>
+<<<<<<< Updated upstream
+=======
+                    </div>
+                </div>
+            </div>
+            <div class="row sendMessage">
+                <div class="search col-3">
+                    <input id="userSearch" class="search-input" type="text" placeholder="Enter Plate Number" />
+                </div>
+                <div class="message-content col-8">
+                    <textarea id="messageContent" class="form-control" rows="2"></textarea>
+                    <span class=""style="margin-top: 10px"></span>
+                </div>
+                <div class="send-button col-1">
+                    <button id="send-button" class="transparent_btn" id="btn-chat">send</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+
+
+    <div class="row">
+         <div class="container-fluid">
+            <div class="messageMenu">
+                <div class="name testRe"></div>
+                  
+                    
+
+                </div>
+                <!-- <div class="clearfix">
+                    <textarea class="form-control" rows="3"></textarea>
+                    <span class=""style="margin-top: 10px"> -->
+                        <!-- <button class="btn btn-warning" id="btn-chat">Send</button> -->
+                    <!-- </span> -->
+                <!-- </div> -->
+            <div class="messages">
+
+                    <div class="message">
+                            <p class="inbox-title">INBOX:</p>
+                            <div class="panel-body body-panel">
+                                <ul class="chat">
+                                    <div class="container-fluid"> 
+                                        <div class="row">
+                                            <div class="inbox ">
+                                
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    
+                            </div>
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< Updated upstream
     </div>
 
     <!--Search Bar
@@ -60,6 +118,106 @@
         <input type="text" name="search" placeholder="Search..">
     </form>
     -->
+=======
+
+
+</html>
+    
+
+
+
+
+        
+        <!-- <div class = "row">
+            <div class = "chatbox">
+                <div class = "searchBar">
+                    <form>
+                        <input type="text" name="search" placeholder="Search..">
+                    </form>
+                </div>
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="chatPanel col-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="glyphicon glyphicon-comment"></span> CHAT:
+                                </div>
+                                <div class="panel-body body-panel">
+                                    <ul class="chat">
+                                        <li class="left clearfix"><span class="chat-img pull-left">
+                                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                                        </span>
+                                            <div class="chat-body clearfix">
+                                                <div class="header">
+                                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                                </div>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                                    dolor, quis ullamcorper ligula sodales.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="right clearfix"><span class="chat-img pull-right">
+                                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                                        </span>
+                                            <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                                        <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                                    </div>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                                        dolor, quis ullamcorper ligula sodales.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix"><span class="chat-img pull-left">
+                                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                                            </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                                            <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                                    </div>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                                        dolor, quis ullamcorper ligula sodales.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="right clearfix"><span class="chat-img pull-right">
+                                                    <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                    <div class="chat-body clearfix">
+                                                        <div class="header">
+                                                            <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
+                                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                                            dolor, quis ullamcorper ligula sodales.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div> --> 
+                                        <!-- <div class="panel-footer clearfix">
+                                            <textarea class="form-control" rows="3"></textarea>
+                                            <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+                                                <button class="btn btn-warning btn-lg btn-block" id="btn-chat">Send</button>
+                                            </span>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> Stashed changes
 
 </body>
 
