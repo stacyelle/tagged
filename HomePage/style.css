@@ -1,86 +1,12 @@
-/* code below was originally in /LandingPage/style.css
-body {
-    background-color: cadetblue;
+.body {
+    background-color: #C1CFDE;
+    margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
 }
-h1.display-4 {
-    position: relative;
-    top: 140px;
-    font-family: "Questrial", sans-serif;
-    color: whitesmoke;
-    font-size: 100px;
-}
-p.tagline {
-    position: relative;
-    top: 140px;
-    font-family: "Questrial", sans-serif;
-    color: rgb(218, 218, 218);
-    padding-top: 180px;
-}
-label {
-    color: white;
-}
-div.forgroup > input::placeholder {
-    color: rgb(190, 222, 231);
-  }
-div.forgroup > input:focus {
-  color: rgb(190, 222, 231);
-  background-color: rgb(54, 68, 71, 0.7);
-  outline: none;
-  box-shadow: none;
-  border: 1px solid  rgb(190, 222, 231);
-}
-.jumbotron {
-    background-image: url("../img/background.jpg");
-    background-color: whitesmoke;
-    width: 100%;
-    margin-bottom: 10px;
-    min-height: 700px;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    justify-content: space-around;
-    padding-top: 0px;
-}
-#logo-jumbotron {
-    position: relative;
-    margin-top: 10%; 
-}
-#arrow {
-    display: block;
-    position: fixed;
-    bottom: 35px;
-    left: 49%;
-    margin: 0 auto;
-}
-div.container {
-    font-family: "Questrial", sans-serif;
-    color: whitesmoke;
-    font-size: 14px;
-	position: relative;
-    bottom: 10px;
-}
-#intro {
-	background: whitesmoke;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	color: #3f263b;
-	position: relative;
-	bottom: 40px;
-} 
-#intro h5, p {
-    color: #3f263b;
-}
-.intro-text {
-    padding: 20px 30px 20px 30px;
-}
-.intro-header {
-    text-align: left;
-    padding-left: 30px;
-}
-*/
-.header {
+.headerBar {
     height: 200px;
     background-image: url("../img/background-header.jpg");
     background-repeat: repeat;
@@ -134,7 +60,15 @@ div.buttons {
     justify-content: space-between;
 }
 
-.searchBar {
+hr {
+    width: 100%; 
+    margin: 0; 
+    height: 1px;
+    background-color: #344C7A;
+    }
+
+/* ------------- animated search bar css begins ----------- /
+.search {
     background-color: #344C7A;
 }
 
@@ -153,9 +87,193 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-/* When the input field gets focus, change its width to 100% */
+/ When the input field gets focus, change its width to 100% /
 input[type=text]:focus {
     background-color: #C1CFDE;
-    width: 100%;
+    width: 50%;
 }
 
+/* ------------- animated search bar css ends ----------- */
+
+/* ------------- inbox css begins ----------- */
+.messageMenu {
+	float: left;
+	height: 100%;
+	width: 250px;
+	color: white;
+	text-align: center;
+    padding-top: 80px;
+    background-color: #344C7A;
+}
+
+.icon {
+	border: 2px solid white;
+    width: 70px;
+    height: 55px;
+    border-radius: 49px;
+    font-size: 34px;
+    margin: 0 auto;
+    padding-top: 14px;
+}
+
+.myname {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 23px;
+}
+
+.new {
+	background-color: #344C7A;
+    margin: 0 auto;
+    width: 170px;
+    height: 36px;
+    border-radius: 8px;
+    padding-top: 13px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.new:hover {
+	background-color: #C1CFDE;
+}
+
+.search {
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid #eee;
+}
+
+.search input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 20px;
+	padding-left: 80px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.messages {
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.message {
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	padding: 30px 0px 45px 80px;
+	color: #999;
+}
+
+
+/* ------------- chatbox css begins ----------- */
+
+.container-fluid {
+    height: 100vh;
+    display:table;
+    width:100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    background-color: #C1CFDE;
+    
+} 
+
+.inbox {
+width:100%;
+height: 400px;
+background-color: #C1CFDE;
+} 
+
+.chatbox {
+    width:100%;
+    height: 600px;
+    background-color: #8AA3BA;
+}
+
+.panel.panel-primary {
+    margin: 10%;
+}
+
+.panel-heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chatPanel {
+    margin-top: 0px;
+}
+
+.btn-warning {
+    color: #C1CFDE;
+    background-color: #344C7A;
+    border-color: #344C7A;
+}
+/* ------------- chatbox css cont...----------- /
+.chatbox {
+background-color: #DCDEE0;
+position: absolute;
+right: 0px;
+width: 50%;
+height: 750px;
+}
+
+
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.panel-heading {
+    height: 50px;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.body-panel
+{
+    overflow-y: scroll;
+    height: 500px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+/* ------------- search bar css ends ----------- */

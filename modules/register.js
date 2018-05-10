@@ -1,5 +1,8 @@
 class Register {
-    constructor() {
+  constructor() {
+
+
+  }
 
     }
     registerButtonAnimate() {
@@ -60,4 +63,5 @@ class Register {
             messages: { "0": "Welcome to Tagged!" }
         });
     } 
+
 }
