@@ -1,11 +1,7 @@
-//finds a user from their plate number, as input put another user
-
 class Messaging {
     constructor() {
       
     }
-
-
     sendMessage() {   
         let messageContent = null;    
         let plateOfRecipient = null;  
@@ -33,7 +29,5 @@ class Messaging {
                 alert("Sorry, that plate isn't registered yet!");
             }
         });
-
-
     }; 
  };

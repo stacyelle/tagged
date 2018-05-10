@@ -150,3 +150,12 @@ div.buttons {
     color: whitesmoke;
     text-decoration: none;
 }
+
+footer {
+	background: rgb(19, 62, 102);
+	color: whitesmoke;
+	position: relative;
+    bottom: 0px;
+    font-family: "Questrial", sans-serif;
+    height: 60px;
+} 

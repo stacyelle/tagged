@@ -1,5 +1,4 @@
- // sends a message to the user found in the userSearch function     
-       
+
 // class Message {
 //     constructor() {
       

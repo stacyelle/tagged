@@ -7,7 +7,7 @@ class Login {
     return firebase.database().ref(`/users/${uid}`).once('value').then(function(snapshot) {
       let userData = snapshot.val();
       console.log(userData);
-      console.log(userData.messages);
+      
       $(".testRe").append(`<p class="plate">${userData.plate}</p>
                           <p>${userData.make}</p>
                           <p>${userData.model}</p>
@@ -15,17 +15,18 @@ class Login {
                           <p class="vin">${userData.vin}</p>`);
     });
 
-
   }
 
   renderInbox() {
     let uid = firebase.auth().currentUser.uid;
       firebase.database().ref(`/users/${uid}/messages`).on('value', function(snapshot) {
-        var messagesObject = snapshot.val();
-        var result = Object.values(messagesObject);
-
-        for (var i = 0; i < result.length; i++) {
-          $(".inbox").append(`<p class="message">${result[i]}</p>`);
+        let messagesObject = snapshot.val();
+        let resultValues = Object.values(messagesObject);
+        let resultKeys = Object.keys(messagesObject);
+        for (var i = 0; i < resultValues.length; i++) {
+          for (var i=0; i <resultKeys.length; i++) {
+            $(".inbox").append(`<p class="message">${resultKeys[i]} : ${resultValues[i]}</p>`);
+          }
         }
     }); 
   }

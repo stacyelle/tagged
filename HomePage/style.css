@@ -68,29 +68,6 @@ hr {
     background-color: #344C7A;
     }
 
-/* ------------- animated search bar css begins ----------- /
-.search {
-    background-color: #344C7A;
-}
-form {
-    display: block;
-    margin-top: 0em;
-    background-color: #344C7A;
-}
-    
-input[type=text] {
-    background-color: #344C7A;
-    color:#94B2CA;
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-/ When the input field gets focus, change its width to 100% /
-input[type=text]:focus {
-    background-color: #C1CFDE;
-    width: 50%;
-}
-/* ------------- animated search bar css ends ----------- */
 
 /* ------------- inbox css begins ----------- */
 .messageMenu {
@@ -160,10 +137,14 @@ input:focus {
 }
 
 .message {
-	width: 100%;
+	width: 90%;
 	border-bottom: 1px solid #eee;
 	padding: 30px 0px 45px 80px;
 	color: #999;
+}
+
+div.message {
+    border-bottom: none;
 }
 
 #userSearch, #messageContent {
@@ -186,7 +167,7 @@ input:focus {
   }
 
   
-  input:focus { 
+  input:focus, textarea.form-control:focus { 
     outline: none !important;
     border-color: rgb(100, 9, 81);
     box-shadow: 0 0 20px rgb(100, 15, 89);
@@ -198,7 +179,7 @@ input:focus {
   
 
 
-/* ------------- chatbox css begins ----------- */
+
 
 .container-fluid {
     height: 100vh;
@@ -240,57 +221,3 @@ background-color: #C1CFDE;
     background-color: #344C7A;
     border-color: #344C7A;
 }
-/* ------------- chatbox css cont...----------- /
-.chatbox {
-background-color: #DCDEE0;
-position: absolute;
-right: 0px;
-width: 50%;
-height: 750px;
-}
-@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-.chat
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.panel-heading {
-    height: 50px;
-}
-.chat li
-{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
-}
-.chat li .chat-body p
-{
-    margin: 0;
-    color: #777777;
-}
-.panel .slidedown .glyphicon, .chat .glyphicon
-{
-    margin-right: 5px;
-}
-.body-panel
-{
-    overflow-y: scroll;
-    height: 500px;
-}
-::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
-::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
-/* ------------- search bar css ends ----------- */

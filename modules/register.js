@@ -53,7 +53,8 @@ class Register {
         writeUserData(uid, plate, vin, make, model, year) {
             let dt = new Date();
             let utcDate = dt.toUTCString();
-            
+          
+        //writes the user details to the user database
           firebase.database().ref(`users/${uid}`).set({
               plate: plate,
               vin: vin,

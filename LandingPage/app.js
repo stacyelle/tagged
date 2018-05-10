@@ -52,7 +52,7 @@ $(function () {
                     const user = snapshot.val();
                     console.log();
                     if (user == null) {
-
+                    // writes user data to authentication database and user database if uid is not already in database
                         let vin = $("#vin").val();
                         let plate = $("#regPlateNum").val();
                         $.get({

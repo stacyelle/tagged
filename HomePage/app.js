@@ -7,8 +7,7 @@ $(function(){
     $("#messageContent").hide();
     $("#send-button").hide();
 
-
-
+    
     $(".logOut").click(function () {
         firebase.auth().signOut();
         window.location = '../LandingPage/index.html';
