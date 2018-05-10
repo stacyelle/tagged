@@ -18,7 +18,7 @@
 }
 
 #logo {
-    width: 40%;
+    max-width: 35%;
     top: 5px;
 }
 
@@ -74,10 +74,51 @@ hr {
 	float: left;
 	height: 100%;
 	width: 250px;
-	color: white;
+	color: rgb(95, 141, 160);
 	text-align: center;
-    padding-top: 80px;
+    padding-top: 17px;
     background-color: #344C7A;
+    font-family: "Nunito", sans-serif;
+}
+
+p.my-info{
+    font-size: 20px;
+    color: rgb(183, 220, 236);
+    font-family: "Nunito", sans-serif;
+}
+
+p.plate {
+    color: rgb(206, 214, 223);
+    font-size: 32px;
+    /* border-bottom: 1px solid rgb(206, 214, 223);
+    border-top: 1px solid rgb(206, 214, 223); */
+    padding: 0px 5px;
+}
+
+#report-abuse {
+    text-decoration: none;
+    color: rgb(156, 133, 68);
+    font-size: 14px;
+    position: fixed;
+    bottom: 0px;
+    left: 65px;
+}
+p.inbox-title {
+    font-family: "Nunito", sans-serif;
+    display: inline;
+    font-size: 28px;
+    position: relative;
+    top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: #344C7A;
+}
+
+#inbox-logo {
+    position: relative;
+    top: 17px;
+    display: inline;
+
 }
 
 .icon {
@@ -137,18 +178,19 @@ input:focus {
 }
 
 .message {
-	width: 90%;
-	border-bottom: 1px solid #eee;
-	padding: 30px 0px 45px 80px;
-	color: #999;
+	/* width: 90%; */
+	border-bottom: 1px solid #344C7A;
+	padding: 10px 20px;
+	color: rgb(33, 50, 80);
 }
 
 div.message {
     border-bottom: none;
+    padding-top: 0px;
 }
 
 #userSearch, #messageContent {
-    background-color: rgba(255,255,255, 0);
+    background-color: rgba(255,255,255, 0.2);
     border: 1px solid #FFF;
     text-decoration: none;
     padding: 10px 14px;
@@ -169,8 +211,8 @@ div.message {
   
   input:focus, textarea.form-control:focus { 
     outline: none !important;
-    border-color: rgb(100, 9, 81);
-    box-shadow: 0 0 20px rgb(100, 15, 89);
+    border-color: rgb(61, 9, 54);
+    box-shadow: 0 0 20px rgb(61, 9, 54);
   }
   
   div.search {
