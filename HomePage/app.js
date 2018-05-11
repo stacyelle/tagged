@@ -8,9 +8,9 @@ $(function () {
     $("#send-button").hide();
 
 
-    $(".logOut").click(function () {
+    $(".logOut").click(() => {
         firebase.auth().signOut();
-        window.location = '../LandingPage/index.html';
+        window.location = '../index.html';
         console.log("signed out");
     });
 
@@ -33,7 +33,7 @@ $(function () {
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user == null) {
-            window.location = '../LandingPage/index.html';
+            window.location = '../index.html';
         }
         else {
             // TODO: start actual work

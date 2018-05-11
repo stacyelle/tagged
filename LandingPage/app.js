@@ -68,10 +68,10 @@ $(function () {
                             }
 
                         }).then(() => {
-                            window.location ='../HomePage/index.html';
+                            window.location ='./HomePage/index.html';
                        });
                     }else {
-                        window.location ='../HomePage/index.html';
+                        window.location ='./HomePage/index.html';
                     }
                 });
             };
