@@ -18,7 +18,7 @@
 }
 
 #logo {
-    width: 40%;
+    max-width: 35%;
     top: 5px;
 }
 
@@ -42,6 +42,7 @@
 	transition: background-color 300ms ease;
     cursor: pointer;
     font-family: "Questrial", sans-serif;
+    margin: 10px 20px;
 }
 .transparent_btn:hover {
 	background-color: rgba(255,255,255, 0.3);
@@ -67,43 +68,57 @@ hr {
     background-color: #344C7A;
     }
 
-/* ------------- animated search bar css begins ----------- /
-.search {
-    background-color: #344C7A;
-}
-
-form {
-    display: block;
-    margin-top: 0em;
-    background-color: #344C7A;
-
-}
-    
-input[type=text] {
-    background-color: #344C7A;
-    color:#94B2CA;
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-/ When the input field gets focus, change its width to 100% /
-input[type=text]:focus {
-    background-color: #C1CFDE;
-    width: 50%;
-}
-
-/* ------------- animated search bar css ends ----------- */
 
 /* ------------- inbox css begins ----------- */
 .messageMenu {
 	float: left;
 	height: 100%;
 	width: 250px;
-	color: white;
+	color: rgb(95, 141, 160);
 	text-align: center;
-    padding-top: 20px;
+    padding-top: 17px;
     background-color: #344C7A;
+    font-family: "Nunito", sans-serif;
+}
+
+p.my-info{
+    font-size: 20px;
+    color: rgb(183, 220, 236);
+    font-family: "Nunito", sans-serif;
+}
+
+p.plate {
+    color: rgb(206, 214, 223);
+    font-size: 32px;
+    /* border-bottom: 1px solid rgb(206, 214, 223);
+    border-top: 1px solid rgb(206, 214, 223); */
+    padding: 0px 5px;
+}
+
+#report-abuse {
+    text-decoration: none;
+    color: rgb(156, 133, 68);
+    font-size: 14px;
+    position: fixed;
+    bottom: 0px;
+    left: 65px;
+}
+p.inbox-title {
+    font-family: "Nunito", sans-serif;
+    display: inline;
+    font-size: 28px;
+    position: relative;
+    top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: #344C7A;
+}
+
+#inbox-logo {
+    position: relative;
+    top: 17px;
+    display: inline;
+
 }
 
 .icon {
@@ -162,15 +177,57 @@ input:focus {
 	overflow-x: hidden;
 }
 
-.message {
-	width: 100%;
-	border-bottom: 1px solid #eee;
-	padding: 30px 0px 45px 80px;
-	color: #999;
+.message, .currentMessage {
+	/* width: 90%; */
+	border-bottom: 1px solid #344C7A;
+	padding: 10px 20px;
+    color: rgb(33, 50, 80);
+    font-weight: bold;
+    
+}
+span {
+    color: lightslategrey;
+    font-size: 0.7rem;
+}
+div.message {
+    border-bottom: none;
+    padding-top: 0px;
+}
+.currentMessage:hover {
+    transform: scale(1.10);
+    cursor: pointer;
 }
 
+#userSearch, #messageContent {
+    background-color: rgba(255,255,255, 0.2);
+    border: 1px solid #FFF;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 120%;
+    font-family: 'Questrial', sans-serif;
+    color: whitesmoke;
+    margin-right: 0px;
+    border-radius: 0px;
+  }
+  
+  input.search-input::placeholder , textarea.form-control::placeholder {
+    color: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    padding: 9px;
+  }
 
-/* ------------- chatbox css begins ----------- */
+  
+  input:focus, textarea.form-control:focus { 
+    outline: none !important;
+    border-color: rgb(61, 9, 54);
+    box-shadow: 0 0 20px rgb(61, 9, 54);
+  }
+  
+  div.search {
+      border: none;
+  }
+
 
 .container-fluid {
     height: 100vh;
@@ -185,7 +242,9 @@ input:focus {
 .inbox {
 width:100%;
 height: 400px;
-background-color: #C1CFDE;
+background-color: #C1CFDE;   
+position: relative;
+top: 20px;
 } 
 
 .chatbox {
@@ -212,68 +271,3 @@ background-color: #C1CFDE;
     background-color: #344C7A;
     border-color: #344C7A;
 }
-/* ------------- chatbox css cont...----------- /
-.chatbox {
-background-color: #DCDEE0;
-position: absolute;
-right: 0px;
-width: 50%;
-height: 750px;
-}
-
-
-@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-.chat
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.panel-heading {
-    height: 50px;
-}
-
-.chat li
-{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
-}
-
-.chat li .chat-body p
-{
-    margin: 0;
-    color: #777777;
-}
-
-.panel .slidedown .glyphicon, .chat .glyphicon
-{
-    margin-right: 5px;
-}
-
-.body-panel
-{
-    overflow-y: scroll;
-    height: 500px;
-}
-
-::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
-
-/* ------------- search bar css ends ----------- */

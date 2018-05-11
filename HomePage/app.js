@@ -1,30 +1,55 @@
-$(function(){
+$(function () {
+    let signOut = new Login();
     let loginHome = new Login();
-    let search = new Search();
+    let messaging = new Messaging();
+
+    $("#userSearch").hide();
+    $("#messageContent").hide();
+    $("#send-button").hide();
+
 
     $(".logOut").click(() => {
         firebase.auth().signOut();
-        window.location = '../LandingPage/index.html';
-     });
+        window.location = '../index.html';
+        console.log("signed out");
+    });
 
-     $(".search-input").on("submit", function(e) {
-         e.preventDefault();
-        let searchResult = search.userSearch();
-        loginHome.renderSearchResult(searchResult);
-     });
+    $("#send-button").on("click", function (e) {
+        e.preventDefault();
+        messaging.sendMessage();
+        alert("Message Sent!");
+        $("#userSearch").hide();
+        $("#messageContent").hide();
+        $("#send-button").hide();
+
+    });
+
+    $("#new-message").click(function () {
+        $("#userSearch").show();
+        $("#messageContent").show();
+        $("#send-button").show();
+    });
 
 
-     firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
         if (user == null) {
-            window.location = '../LandingPage/index.html';
+            window.location = '../index.html';
         }
         else {
             // TODO: start actual work
-            let uid = firebase.auth().currentUser.uid;
             loginHome.renderHomePage();
+            loginHome.renderInbox();
+
+            //remove message
+            $(".inbox").on("click", ".currentMessage", function () {
+                let textDate = ($("span", this).text());
+                $(this).remove();
+                loginHome.removeMessage(textDate);
+
+
+            });
         }
-      });
-     
+    });
 
 });
 
